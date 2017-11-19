@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="Dragging" customModuleProvider="target">
+            <connections>
+                <outlet property="emailTextView" destination="aVu-WN-sPh" id="cYy-yn-dLX"/>
+                <outlet property="passwordTextView" destination="Twe-1g-s45" id="aRG-Za-VAh"/>
+                <outlet property="registerButton" destination="aUp-0C-npm" id="css-X2-9k1"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Twe-1g-s45">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="283" id="1cH-nL-wKm"/>
+                        <constraint firstAttribute="height" constant="30" id="zqK-JC-6zP"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUp-0C-npm">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="R1R-KJ-JC1"/>
+                        <constraint firstAttribute="width" constant="78" id="ayC-qh-bym"/>
+                    </constraints>
+                    <state key="normal" title="Register"/>
+                    <connections>
+                        <action selector="registerAction:" destination="-1" eventType="touchUpInside" id="7EM-zc-HxQ"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aVu-WN-sPh">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="283" id="FGk-e8-mBf"/>
+                        <constraint firstAttribute="height" constant="30" id="fxD-v5-jHP"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Twe-1g-s45" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="F0k-XB-aan"/>
+                <constraint firstItem="aUp-0C-npm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RMn-FD-afp"/>
+                <constraint firstItem="Twe-1g-s45" firstAttribute="top" secondItem="aVu-WN-sPh" secondAttribute="bottom" constant="34" id="VAp-Ee-iBi"/>
+                <constraint firstItem="aUp-0C-npm" firstAttribute="top" secondItem="Twe-1g-s45" secondAttribute="bottom" constant="46" id="YA6-JH-mAf"/>
+                <constraint firstItem="aVu-WN-sPh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="h6p-cn-Eja"/>
+                <constraint firstItem="aUp-0C-npm" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="44" id="jxi-ed-MdQ"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="63.5"/>
+        </view>
+    </objects>
+</document>

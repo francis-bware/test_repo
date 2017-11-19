@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditTacticsViewController" customModule="Dragging" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ec-I6-4YQ">
+                    <color key="backgroundColor" red="0.16078431369999999" green="0.75294117650000003" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="nAM-We-DdT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="Confirm">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NU0-zh-Js4">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="oRt-8W-o4o"/>
+                        <outlet property="delegate" destination="-1" id="YFm-dP-57C"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="5ec-I6-4YQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="E9O-2o-AJ2"/>
+                <constraint firstAttribute="trailing" secondItem="5ec-I6-4YQ" secondAttribute="trailing" id="LaZ-SE-HaD"/>
+                <constraint firstItem="NU0-zh-Js4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Pl6-Bh-Iqg"/>
+                <constraint firstAttribute="bottom" secondItem="5ec-I6-4YQ" secondAttribute="bottom" id="gMV-la-vUU"/>
+                <constraint firstItem="5ec-I6-4YQ" firstAttribute="top" secondItem="NU0-zh-Js4" secondAttribute="bottom" id="jR5-at-IRg"/>
+                <constraint firstAttribute="trailing" secondItem="NU0-zh-Js4" secondAttribute="trailing" id="xRK-t5-ExU"/>
+                <constraint firstItem="NU0-zh-Js4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="zlh-Dk-KqQ"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

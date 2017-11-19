@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Dragging" customModuleProvider="target">
+            <connections>
+                <outlet property="emailTextLabel" destination="ESx-D1-Ec9" id="b6W-Vt-YTE"/>
+                <outlet property="loginButton" destination="na2-Bv-VBj" id="N9H-ai-pOk"/>
+                <outlet property="passwordTextLabel" destination="GyY-wb-ePb" id="Jbm-iF-LPv"/>
+                <outlet property="signInButton" destination="eiO-X3-jPh" id="2dB-cW-UrR"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="na2-Bv-VBj">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="78" id="MN5-k9-454"/>
+                        <constraint firstAttribute="height" constant="38" id="hYM-Kp-O5R"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="Log In"/>
+                    <connections>
+                        <action selector="loginAction:" destination="-1" eventType="touchUpInside" id="e1w-4m-oNJ"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GyY-wb-ePb">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="26a-1d-ksy"/>
+                        <constraint firstAttribute="width" constant="283" id="gbi-LT-csv"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ESx-D1-Ec9">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="283" id="G5o-Y7-126"/>
+                        <constraint firstAttribute="height" constant="30" id="Nji-DT-UMu"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I00-G9-FrM">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="103" id="EPx-6T-3Nz"/>
+                        <constraint firstAttribute="height" constant="39" id="J4n-3t-BXy"/>
+                    </constraints>
+                    <state key="normal" title="Register"/>
+                    <connections>
+                        <action selector="registerAction:" destination="-1" eventType="touchUpInside" id="UBW-r1-a2M"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eiO-X3-jPh" customClass="GIDSignInButton">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="0Fi-ZG-fng"/>
+                        <constraint firstAttribute="height" constant="60" id="H2U-Pb-BsH"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="I00-G9-FrM" secondAttribute="bottom" constant="20" id="24T-Kj-uBz"/>
+                <constraint firstItem="I00-G9-FrM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2dT-XP-c4g"/>
+                <constraint firstItem="eiO-X3-jPh" firstAttribute="top" secondItem="na2-Bv-VBj" secondAttribute="bottom" constant="20" id="66O-nD-Qwd"/>
+                <constraint firstItem="GyY-wb-ePb" firstAttribute="top" secondItem="ESx-D1-Ec9" secondAttribute="bottom" constant="34" id="CzN-j3-lck"/>
+                <constraint firstItem="GyY-wb-ePb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Oya-Jf-leo"/>
+                <constraint firstItem="eiO-X3-jPh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Sq4-i8-sC7"/>
+                <constraint firstItem="ESx-D1-Ec9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aJs-yh-Ywp"/>
+                <constraint firstItem="na2-Bv-VBj" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="45" id="pCd-hN-eaW"/>
+                <constraint firstItem="na2-Bv-VBj" firstAttribute="top" secondItem="GyY-wb-ePb" secondAttribute="bottom" constant="46" id="pE4-JZ-lUG"/>
+                <constraint firstItem="na2-Bv-VBj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vLO-cx-Xuw"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="63.5"/>
+        </view>
+    </objects>
+</document>

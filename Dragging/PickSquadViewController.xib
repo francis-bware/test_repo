@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PickSquadViewController" customModule="Dragging" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z0I-GC-TfP">
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PICK YOUR SQUAD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7f2-9O-sSU">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="78" id="cSZ-e9-S0T"/>
+                                <constraint firstAttribute="width" constant="165" id="sIW-Zt-x0C"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.17254901959999999" green="0.1960784314" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="7f2-9O-sSU" firstAttribute="top" secondItem="z0I-GC-TfP" secondAttribute="top" constant="25" id="dXY-iv-QEE"/>
+                        <constraint firstAttribute="height" constant="128" id="kLw-vz-9d8"/>
+                        <constraint firstItem="7f2-9O-sSU" firstAttribute="centerX" secondItem="z0I-GC-TfP" secondAttribute="centerX" id="pcy-H4-rD4"/>
+                    </constraints>
+                </view>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="epU-eL-FY7">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="Rkk-1M-mvl"/>
+                    </constraints>
+                    <segments>
+                        <segment title="Play"/>
+                        <segment title="Facebook"/>
+                        <segment title="Contacts"/>
+                    </segments>
+                </segmentedControl>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WKg-DB-lgJ">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="m1e-rV-kpz"/>
+                        <outlet property="delegate" destination="-1" id="yNg-lS-gfE"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="epU-eL-FY7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1F7-Ey-Ezn"/>
+                <constraint firstItem="epU-eL-FY7" firstAttribute="top" secondItem="z0I-GC-TfP" secondAttribute="bottom" id="6zO-hN-amE"/>
+                <constraint firstAttribute="trailing" secondItem="z0I-GC-TfP" secondAttribute="trailing" id="7mC-Q1-pPx"/>
+                <constraint firstAttribute="bottom" secondItem="WKg-DB-lgJ" secondAttribute="bottom" id="9SH-kF-2Dd"/>
+                <constraint firstAttribute="trailing" secondItem="epU-eL-FY7" secondAttribute="trailing" id="MiB-IN-hH2"/>
+                <constraint firstItem="WKg-DB-lgJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="S9E-EN-3Iy"/>
+                <constraint firstItem="z0I-GC-TfP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XEX-VS-hlN"/>
+                <constraint firstItem="WKg-DB-lgJ" firstAttribute="top" secondItem="epU-eL-FY7" secondAttribute="bottom" constant="1" id="YQ7-Aw-b9Y"/>
+                <constraint firstAttribute="trailing" secondItem="WKg-DB-lgJ" secondAttribute="trailing" id="hmv-ez-MUf"/>
+                <constraint firstItem="z0I-GC-TfP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="w5z-FF-yhO"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="33.5" y="58.5"/>
+        </view>
+    </objects>
+</document>
