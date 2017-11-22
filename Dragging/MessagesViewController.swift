@@ -100,11 +100,11 @@ class MessagesViewController: UIViewController {
         
         let conversationView = ConversationViewController(tableViewStyle: .plain)
         
-        conversationView.conversation = cell.conversation
-        
-        let navController = UINavigationController(rootViewController: conversationView)
-        navController.navigationBar.barTintColor = UIColor(red: CGFloat(42/255.0), green: CGFloat(202/255.0), blue: CGFloat(208/255.0), alpha: 1.0)
-        self.present(navController, animated: true, completion: nil)
+//        conversationView.conversation = cell.conversation
+//        
+//        let navController = UINavigationController(rootViewController: conversationView)
+//        navController.navigationBar.barTintColor = UIColor(red: CGFloat(42/255.0), green: CGFloat(202/255.0), blue: CGFloat(208/255.0), alpha: 1.0)
+//        self.present(navController, animated: true, completion: nil)
     }
     
     /*

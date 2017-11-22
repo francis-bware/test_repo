@@ -11,11 +11,11 @@ import FBSDKCoreKit
 import FBSDKShareKit
 import Parse
 import KCFloatingActionButton
-import FirebaseCore
-import FirebaseDatabase
 import CoreData
 import FirebaseInvites
 import GoogleSignIn
+import FirebaseCore
+import FirebaseDatabase
 import FirebaseAuth
 
 class TeamSummaryViewController: UIViewController, OBOvumSource, OBDropZone, PlayerFormationDelegate, FBSDKAppInviteDialogDelegate, NewPlayerDelegate, InviteDelegate {

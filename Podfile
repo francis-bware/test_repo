@@ -22,6 +22,7 @@ def sharedPods
     pod 'Firebase/Database'
     pod 'Firebase/Invites'
     pod 'Firebase/Storage'
+    pod 'JSQMessagesViewController'
 end
 
 target 'Dragging' do

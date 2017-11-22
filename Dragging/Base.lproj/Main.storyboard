@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,10 +16,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Messages View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="lzW-yJ-tQt">
             <objects>
-                <viewController id="JRx-BO-Thp" customClass="MessagesViewController" customModule="Dragging" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JRx-BO-Thp" customClass="ChatViewController" customModule="Dragging" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" image="chat_tab.png" id="Xr9-NP-Hmp"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kf4-Iq-6Sq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1347,8 +1347,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="2lO-gT-2HU" kind="relationship" relationship="viewControllers" id="Lzn-2D-CX3"/>
-                        <segue destination="JRx-BO-Thp" kind="relationship" relationship="viewControllers" id="Ndu-2m-gdA"/>
                         <segue destination="eX6-zb-TVp" kind="relationship" relationship="viewControllers" id="VGF-OW-YiF"/>
+                        <segue destination="JRx-BO-Thp" kind="relationship" relationship="viewControllers" id="UKx-gj-twj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

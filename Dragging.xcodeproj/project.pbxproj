@@ -72,6 +72,8 @@
 		8F6D61031DB614CF0031B92C /* export.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F6D61021DB614CF0031B92C /* export.png */; };
 		8F6D61051DB61D0D0031B92C /* NewPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6D61041DB61D0D0031B92C /* NewPlayerViewController.swift */; };
 		8F6D61071DB629C10031B92C /* PlayerDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6D61061DB629C10031B92C /* PlayerDragView.swift */; };
+		8F70F7541FC57BB600A93248 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F70F7521FC57BB600A93248 /* ChatViewController.swift */; };
+		8F70F7551FC57BB600A93248 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F70F7531FC57BB600A93248 /* ChatViewController.xib */; };
 		8F796C7E1E94DED4007795D8 /* EditMatchupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F796C7C1E94DED4007795D8 /* EditMatchupViewController.swift */; };
 		8F796C7F1E94DED4007795D8 /* EditMatchupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F796C7D1E94DED4007795D8 /* EditMatchupViewController.xib */; };
 		8F959CDC1EED1B46007DD990 /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959CDB1EED1B46007DD990 /* DatePickerDialog.swift */; };
@@ -212,6 +214,8 @@
 		8F6D61021DB614CF0031B92C /* export.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = export.png; sourceTree = "<group>"; };
 		8F6D61041DB61D0D0031B92C /* NewPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPlayerViewController.swift; sourceTree = "<group>"; };
 		8F6D61061DB629C10031B92C /* PlayerDragView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDragView.swift; sourceTree = "<group>"; };
+		8F70F7521FC57BB600A93248 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		8F70F7531FC57BB600A93248 /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
 		8F796C7C1E94DED4007795D8 /* EditMatchupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditMatchupViewController.swift; sourceTree = "<group>"; };
 		8F796C7D1E94DED4007795D8 /* EditMatchupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditMatchupViewController.xib; sourceTree = "<group>"; };
 		8F846C5E1F9DD2A2003F62C0 /* ic_checkmark_green_24@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_checkmark_green_24@3x.png"; path = "Pods/FirebaseInvites/Resources/GPPACLPickerResources.bundle/ic_checkmark_green_24@3x.png"; sourceTree = SOURCE_ROOT; };
@@ -361,6 +365,8 @@
 				8F150D981E876E4A0019E590 /* PlayerListViewController.xib */,
 				8F150D9B1E877E4C0019E590 /* CreateMessageTableViewCell.swift */,
 				8F150D9C1E877E4C0019E590 /* CreateMessageTableViewCell.xib */,
+				8F70F7521FC57BB600A93248 /* ChatViewController.swift */,
+				8F70F7531FC57BB600A93248 /* ChatViewController.xib */,
 			);
 			name = Messaging;
 			sourceTree = "<group>";
@@ -694,6 +700,7 @@
 				8F081F271E75152800A9FEA8 /* shirt (1).png in Resources */,
 				8F081F1D1E6FF89D00A9FEA8 /* TakePhotoViewController.xib in Resources */,
 				8F271AA71F36A51600CC55FF /* GoogleService-Info.plist in Resources */,
+				8F70F7551FC57BB600A93248 /* ChatViewController.xib in Resources */,
 				8F4142F41E4855AB00938F24 /* referee.png in Resources */,
 				8F6B14691E9E265D00DFD65B /* ConversationViewController.xib in Resources */,
 				8F150D8E1E8756D70019E590 /* MessagesViewController.xib in Resources */,
@@ -757,6 +764,8 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/HanekeSwift/Haneke.framework",
 				"${BUILT_PRODUCTS_DIR}/IGColorPicker/IGColorPicker.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/KCFloatingActionButton/KCFloatingActionButton.framework",
 				"${BUILT_PRODUCTS_DIR}/M13Checkbox/M13Checkbox.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
@@ -777,6 +786,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Haneke.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGColorPicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KCFloatingActionButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M13Checkbox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
@@ -852,6 +863,7 @@
 				8F5EE16E1EDABF11007C4F10 /* Match+CoreDataProperties.swift in Sources */,
 				8F4C79791E134FC800149CD9 /* AkiraTextField.swift in Sources */,
 				8F4C797E1E134FC800149CD9 /* MadokaTextField.swift in Sources */,
+				8F70F7541FC57BB600A93248 /* ChatViewController.swift in Sources */,
 				8F4C797C1E134FC800149CD9 /* JiroTextField.swift in Sources */,
 				8FA607111DFFDA36003F8143 /* HomePageViewController.swift in Sources */,
 				8F13128F1E3D70E5000796DE /* PlayerProfileViewController.swift in Sources */,
