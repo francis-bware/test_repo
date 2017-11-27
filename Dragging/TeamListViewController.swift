@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 import Parse
+import FirebaseCore
+import FirebaseDatabase
 
 class TeamListViewController: UIViewController {
     
@@ -29,7 +31,7 @@ class TeamListViewController: UIViewController {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Team")
         
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-        fetchRequest.predicate = NSPredicate(format: "my_role == %@", "manager")
+//        fetchRequest.predicate = NSPredicate(format: "my_role == %@", "manager")
         
         do {
             let results = try managedContext.fetch(fetchRequest)
@@ -90,9 +92,15 @@ class TeamListViewController: UIViewController {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)!
+        let team = teamArray[indexPath.row]
         
+        let ref = Database.database().reference(withPath: "conversation").childByAutoId()
         
+        let message = ["team_id": team.id, "last_update" : DateFormatters.utcFormat.string(from: Date())]
+        
+        ref.setValue(message, withCompletionBlock: {(error, ref) -> Void in
+            self.dismiss(animated: true, completion: nil)
+        })
     }
     
 

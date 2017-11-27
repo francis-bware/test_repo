@@ -16,10 +16,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Chat View Controller-->
+        <!--Messages View Controller-->
         <scene sceneID="lzW-yJ-tQt">
             <objects>
-                <viewController id="JRx-BO-Thp" customClass="ChatViewController" customModule="Dragging" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JRx-BO-Thp" customClass="MessagesViewController" customModule="Dragging" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" image="chat_tab.png" id="Xr9-NP-Hmp"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kf4-Iq-6Sq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -124,7 +124,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Real Madrid" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAn-fN-RJ4">
-                                                        <rect key="frame" x="5" y="61" width="83" height="46"/>
+                                                        <rect key="frame" x="5" y="61" width="82.5" height="46"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="46" id="gL6-0G-s05"/>
@@ -144,7 +144,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKd-3J-29U">
-                                                        <rect key="frame" x="73" y="23" width="42" height="21"/>
+                                                        <rect key="frame" x="72.5" y="23" width="42" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="42" id="Xs4-Zb-k2F"/>
                                                             <constraint firstAttribute="height" constant="21" id="zjd-yM-1UO"/>
@@ -975,7 +975,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Team" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alI-9z-ENs">
-                                                        <rect key="frame" x="5" y="61" width="85.5" height="56"/>
+                                                        <rect key="frame" x="5" y="61" width="86" height="56"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="56" id="eA7-4P-FLK"/>
@@ -995,7 +995,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="du7-Ub-YC0">
-                                                        <rect key="frame" x="72.5" y="23" width="42" height="21"/>
+                                                        <rect key="frame" x="73" y="23" width="42" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="U0v-AU-cCd"/>
                                                             <constraint firstAttribute="width" constant="42" id="hNG-U8-BGf"/>

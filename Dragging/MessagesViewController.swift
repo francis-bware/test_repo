@@ -9,11 +9,16 @@
 import UIKit
 import Parse
 import KCFloatingActionButton
+import FirebaseCore
+import FirebaseDatabase
+import FirebaseAuth
+import CoreData
+import DateTools
 
 class MessagesViewController: UIViewController {
     
     @IBOutlet weak var tableview: UITableView!
-    var conversationArray = [PFObject]()
+    var conversationArray = [[String : Any]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,20 +43,62 @@ class MessagesViewController: UIViewController {
         fab.paddingY = 60
         self.view.addSubview(fab)
         
-        if let person = PFUser.current()?.object(forKey: "person") as? PFObject {
-            let conversationQuery = PFQuery(className: "Conversation")
-            conversationQuery.whereKey("people", equalTo: person)
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Team")
+        
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        //        fetchRequest.predicate = NSPredicate(format: "my_role == %@", "manager")
+        
+        do {
+            let results = try managedContext.fetch(fetchRequest)
             
-            conversationQuery.findObjectsInBackground{
-                (objects, error) -> Void in
+            let teamArray = results as! [Team]
+            
+            for team in teamArray {
+                let conversationRef = Database.database().reference(withPath: "conversation")
                 
-                if error == nil {
-                    self.conversationArray = objects!
+                conversationRef.queryOrdered(byChild: "team_id").queryEqual(toValue: team.id).observeSingleEvent(of: .value, with: { snapshot in
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
                     
-                    self.tableview.reloadData()
-                }
+                    let managedContext = appDelegate.managedObjectContext
+                    
+                    for conversation in snapshot.children {
+                        
+                        let snapshotValue = snapshot.value as! NSDictionary
+                        
+                        if let snapshotValue = snapshotValue.allValues.first as? NSDictionary {
+                            print(snapshotValue)
+                            let last_update = DateFormatters.utcFormat.date(from: snapshotValue["last_update"] as! String)
+                            
+                            
+                            let query = Database.database().reference(withPath: "chat").queryLimited(toLast: 1)
+                            _ = query.observe(.childAdded, with: { [weak self] snapshot in
+                                
+                                if  let data = snapshot.value as? [String: String],
+                                    let id = data["sender_id"],
+                                    let name = data["name"],
+                                    let text = data["text"],
+                                    let date = data["date"],
+                                    !text.isEmpty {
+                                    
+                                    let last_update = DateFormatters.utcFormat.date(from: date as! String)
+                                    self?.conversationArray.append(["name" : team.name!, "team_id" : snapshotValue["team_id"] as! String, "last_update" : last_update ?? Date(), "last_message" : text])
+                                    self?.tableview.reloadData()
+                                }
+                            })
+                        }
+                    }
+                })
             }
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
         }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,16 +128,19 @@ class MessagesViewController: UIViewController {
         
         let conversation = conversationArray[indexPath.row]
         
-        if let people = conversation.value(forKey: "people") as? PFRelation {
-            let peopleArray = people.query()
-            print(peopleArray)
+        cell?.nameLabel?.text = "\(conversation["name"]!)"
+        if let text = conversation["last_message"] as? String{
+            cell?.descriptionLabel.text = text
+        } else {
+            cell?.descriptionLabel.text = "No messages"
         }
-        
-        cell?.nameLabel?.text = "\(conversation.value(forKey: "name")!)"
-        cell?.descriptionLabel.text = "No messages"
+            
+        if let date = conversation["last_update"] as? NSDate {
+            cell?.dateLabel.text = date.shortTimeAgoSinceNow()
+        }
         cell?.conversation = conversation
         
-        cell?.restorationIdentifier = conversation.objectId!
+//        cell?.restorationIdentifier = conversation.objectId!
         
         return cell!
     }
@@ -98,13 +148,13 @@ class MessagesViewController: UIViewController {
     func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)! as! MessageSummaryTableViewCell
         
-        let conversationView = ConversationViewController(tableViewStyle: .plain)
+        let conversationView = ChatViewController()
         
-//        conversationView.conversation = cell.conversation
-//        
-//        let navController = UINavigationController(rootViewController: conversationView)
-//        navController.navigationBar.barTintColor = UIColor(red: CGFloat(42/255.0), green: CGFloat(202/255.0), blue: CGFloat(208/255.0), alpha: 1.0)
-//        self.present(navController, animated: true, completion: nil)
+        conversationView.conversation = cell.conversation
+        
+        let navController = UINavigationController(rootViewController: conversationView)
+        navController.navigationBar.barTintColor = UIColor(red: CGFloat(42/255.0), green: CGFloat(202/255.0), blue: CGFloat(208/255.0), alpha: 1.0)
+        self.present(navController, animated: true, completion: nil)
     }
     
     /*

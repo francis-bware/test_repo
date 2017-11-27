@@ -16,7 +16,7 @@ class MessageSummaryTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var conversationImage: UIImageView!
     
-    var conversation : PFObject?
+    var conversation : [String : Any]?
     
     override func awakeFromNib() {
         super.awakeFromNib()

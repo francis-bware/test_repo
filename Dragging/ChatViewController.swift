@@ -14,6 +14,7 @@ import FirebaseAuth
 
 class ChatViewController: JSQMessagesViewController {
     
+    var conversation :  [String : Any]?
     var messages = [JSQMessage]()
     
     lazy var outgoingBubble: JSQMessagesBubbleImage = {
@@ -33,16 +34,35 @@ class ChatViewController: JSQMessagesViewController {
         
         let defaults = UserDefaults.standard
     
-            senderId = String(arc4random_uniform(999999))
-            senderDisplayName = ""
+            senderId = Auth.auth().currentUser!.uid
+            senderDisplayName = Auth.auth().currentUser!.displayName
         
-        defaults.set("test", forKey: "jsq_id")
-        defaults.set("Nothing", forKey: "jsq_name")
+        defaults.set(Auth.auth().currentUser!.uid, forKey: "jsq_id")
+        defaults.set(Auth.auth().currentUser!.displayName, forKey: "jsq_name")
 
         // Do any additional setup after loading the view.
         inputToolbar.contentView.leftBarButtonItem = nil
         collectionView.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
+        
+        let query = Database.database().reference(withPath: "chat").queryLimited(toLast: 10)
+        
+        _ = query.observe(.childAdded, with: { [weak self] snapshot in
+            
+            if  let data        = snapshot.value as? [String: String],
+                let id          = data["sender_id"],
+                let name        = data["name"],
+                let text        = data["text"],
+                !text.isEmpty
+            {
+                if let message = JSQMessage(senderId: id, displayName: name, text: text)
+                {
+                    self?.messages.append(message)
+                    
+                    self?.finishReceivingMessage()
+                }
+            }
+        })
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData!
@@ -79,7 +99,7 @@ class ChatViewController: JSQMessagesViewController {
     {
         let ref = Database.database().reference(withPath: "chat").childByAutoId()
         
-        let message = ["sender_id": Auth.auth().currentUser!.uid, "name": Auth.auth().currentUser?.displayName, "text": text]
+        let message = ["sender_id": Auth.auth().currentUser!.uid, "name": Auth.auth().currentUser?.displayName, "text": text, "date" : DateFormatters.utcFormat.string(from: Date()), "conversation" : conversation!["team_id"]]
         
         ref.setValue(message)
         
